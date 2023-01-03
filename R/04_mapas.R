@@ -235,7 +235,7 @@ mapear_cidade <- function(cidade, hexgrid, limite,
     st_centroid()
   
   # calcular centroide da cidade, para centralizar o mapa
-  points <- h3_to_point(pop_grid$id_hex, simple = F)
+  points <- cell_to_point(pop_grid$id_hex, simple = F)
 
   centroid_sf <- points |> 
     summarise(.groups = "drop") |> 
